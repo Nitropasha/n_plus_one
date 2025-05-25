@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-authors
+      author: Pavel
+      changes:
+        - insert:
+            tableName: author
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: name, value: "Alice Johnson" }
+        - insert:
+            tableName: author
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: name, value: "Bob Smith" }
+        - insert:
+            tableName: author
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: name, value: "Clara Nguyen" }
+        - insert:
+            tableName: author
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: name, value: "David Lee" }
+        - insert:
+            tableName: author
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: name, value: "Eva Petrova" }
+
+  - changeSet:
+      id: insert-articles
+      author: Pavel
+      changes:
+        - insert:
+            tableName: article
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: title, value: "Introduction to Microservices" }
+              - column: { name: text, value: "This article covers the basics of microservices architecture." }
+
+        - insert:
+            tableName: article
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: title, value: "Understanding Kubernetes" }
+              - column: { name: text, value: "Explains Kubernetes components and usage." }
+
+        - insert:
+            tableName: article
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: title, value: "REST API Design Best Practices" }
+              - column: { name: text, value: "Guidelines and patterns for building RESTful APIs." }
+
+        - insert:
+            tableName: article
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: title, value: "Spring Boot Security" }
+              - column: { name: text, value: "Overview of authentication and authorization in Spring Boot." }
+
+        - insert:
+            tableName: article
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: title, value: "Docker for Java Developers" }
+              - column: { name: text, value: "How to use Docker effectively in Java projects." }
+
+  - changeSet:
+      id: link-articles-authors
+      author: Pavel
+      changes:
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 1 }
+              - column: { name: author_id, value: 1 }
+
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 2 }
+              - column: { name: author_id, value: 2 }
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 2 }
+              - column: { name: author_id, value: 3 }
+
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 3 }
+              - column: { name: author_id, value: 4 }
+
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 4 }
+              - column: { name: author_id, value: 3 }
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 4 }
+              - column: { name: author_id, value: 5 }
+
+        - insert:
+            tableName: article_author
+            columns:
+              - column: { name: article_id, value: 5 }
+              - column: { name: author_id, value: 1 }

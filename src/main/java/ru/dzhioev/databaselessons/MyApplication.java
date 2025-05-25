@@ -1,13 +1,13 @@
-package ru.sendel.liquibaseguide;
+package ru.dzhioev.databaselessons;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LiquibaseGuideApplication {
+public class MyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LiquibaseGuideApplication.class, args);
+		SpringApplication.run(MyApplication.class, args);
 	}
 
 }
