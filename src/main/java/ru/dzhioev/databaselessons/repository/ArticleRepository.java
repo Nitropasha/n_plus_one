@@ -11,11 +11,10 @@ import java.util.List;
 @Repository
 
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-    @Query("SELECT DISTINCT a FROM Article a JOIN FETCH a.authors")
-    List<Article> findAllArticles();
+//    @Query("SELECT DISTINCT a FROM Article a JOIN FETCH a.authors")
+//    List<Article> findAllArticles();
 
 //    @EntityGraph(attributePaths = {"authors"})
 //    List<Article> findAll();
-
 
 }
