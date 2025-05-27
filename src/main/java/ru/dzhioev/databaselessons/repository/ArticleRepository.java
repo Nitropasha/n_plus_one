@@ -9,11 +9,13 @@ import ru.dzhioev.databaselessons.model.Article;
 import java.util.List;
 
 @Repository
-
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-//    @Query("SELECT DISTINCT a FROM Article a JOIN FETCH a.authors")
-//    List<Article> findAllArticles();
 
+    //Расскоментировать что бы исправить через FETCH
+//    @Query("SELECT DISTINCT a FROM Article a JOIN FETCH a.authors")
+//    List<Article> findAll();
+
+    //Расскоментировать что бы исправить через EntityGraph
 //    @EntityGraph(attributePaths = {"authors"})
 //    List<Article> findAll();
 

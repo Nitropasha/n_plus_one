@@ -30,7 +30,7 @@ public class Article {
     @Column(nullable = false)
     String text;
 
-    @ManyToMany (fetch = FetchType.LAZY)
+    @ManyToMany (fetch = FetchType.EAGER)
     @JoinTable(
             name = "article_author",
             joinColumns = @JoinColumn(name = "article_id"),
