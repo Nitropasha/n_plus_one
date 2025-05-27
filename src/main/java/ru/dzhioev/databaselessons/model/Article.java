@@ -2,6 +2,7 @@ package ru.dzhioev.databaselessons.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,6 +32,8 @@ public class Article {
     String text;
 
     @ManyToMany (fetch = FetchType.EAGER)
+    //Решение через Batch
+//    @BatchSize(size = 5)
     @JoinTable(
             name = "article_author",
             joinColumns = @JoinColumn(name = "article_id"),
