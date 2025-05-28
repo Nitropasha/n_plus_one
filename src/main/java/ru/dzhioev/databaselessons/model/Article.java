@@ -31,9 +31,9 @@ public class Article {
     @Column(nullable = false)
     String text;
 
-    @ManyToMany (fetch = FetchType.EAGER)
+    @ManyToMany (fetch = FetchType.LAZY)
    //Решение через Batch
-    @BatchSize(size = 5)
+//    @BatchSize(size = 5)
     @JoinTable(
             name = "article_author",
             joinColumns = @JoinColumn(name = "article_id"),

@@ -11,6 +11,7 @@ import ru.dzhioev.databaselessons.service.ArticleService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,11 +25,9 @@ public class MyController {
         return "Hello World";
     }
 
-    @GetMapping("/article")
+    @GetMapping("/articles")
     public List<ArticleDto> articles() {
-        return articleService.findAllArticles().stream()
-                .map(articleMapper::toDto)
-                .toList();
+        return articleService.findAllArticleDtos();
     }
 
     @GetMapping("/author")
